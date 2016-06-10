@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using System;
 
@@ -71,7 +71,7 @@ public class move : MonoBehaviour
 
         //화
         planet4_now = planet4_now + Time.deltaTime;
-        planet4.transform.position = new Vector3(15.2f * Convert.ToSingle(Math.Cos(360 * (planet4_now + 40f) / planet4_jugi)), 0, 1.51f * Convert.ToSingle(Math.Sin(360 * (planet4_now + 40f) / planet4_jugi)));
+        planet4.transform.position = new Vector3(15.2f * Convert.ToSingle(Math.Cos(360 * (planet4_now + 40f) / planet4_jugi)), 0, 15.1f * Convert.ToSingle(Math.Sin(360 * (planet4_now + 40f) / planet4_jugi)));
         if (planet4_now > planet4_jugi)
         {
             planet4_now = 0;
