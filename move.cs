@@ -1,9 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 
 public class move : MonoBehaviour
 {
+
+
     public GameObject planet1; // 수성
     float planet1_jugi = 88;
     float planet1_now = 0;
@@ -38,13 +41,19 @@ public class move : MonoBehaviour
 
 
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    void Start()
     {
+        Input.gyro.enabled = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Quaternion q1 = Input.gyro.attitude;
+
+
+
+
         //수
         planet1_now = planet1_now + Time.deltaTime;
         planet1.transform.position = new Vector3(3.8f * Convert.ToSingle(Math.Cos(360 * (planet1_now + 10f) / planet1_jugi)), 0/*planet1.GetComponent<Transform>().position.y*/, 3.7f * Convert.ToSingle(Math.Sin(360 * (planet1_now + 10f) / planet1_jugi)));
@@ -110,5 +119,5 @@ public class move : MonoBehaviour
         }
     }
 
-    
+
 }
